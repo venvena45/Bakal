@@ -12,31 +12,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        /* Custom CSS ditempatkan di sini agar satu file praktis */
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+        /* Custom CSS */
+        body { font-family: 'Poppins', sans-serif; }
 
         /* --- Hero Section Background --- */
         .hero-bg {
+            /* Placeholder image, ganti dengan gambar asli jika ada */
             background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                        url('images/header.jpg');
+                        url('images/header.jpg'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax sederhana */
+            background-attachment: fixed;
         }
         
-        /* Fix background attachment di iOS mobile */
         @media (hover: none) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
+            .hero-bg { background-attachment: scroll; }
         }
 
         /* --- Tombol RT --- */
-        .rt-btn {
-            transition: all 0.3s ease;
-        }
+        .rt-btn { transition: all 0.3s ease; }
         .active-rt {
             background-color: #2563EB !important;
             color: white !important;
@@ -44,7 +38,7 @@
             transform: scale(1.05);
             box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.5);
         }
-
+        
         .bg-dots {
             background-image: radial-gradient(#2563EB 2px, transparent 2px);
             background-size: 20px 20px;
@@ -84,8 +78,8 @@
 
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white text-center px-4 pt-16">
         <div class="max-w-3xl">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-600/30 border border-blue-400 text-xs md:text-sm mb-4 backdrop-blur-sm">Website Resmi</span>
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">Masyarakat Bakal Pokok<br> <span class="text-blue-400">Mandiri & Sejahtera</span></h1>
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-600/30 border border-blue-400 text-xs md:text-sm mb-4 backdrop-blur-sm">Data Kependudukan</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">Masyarakat Bakal Pokok<br> <span class="text-blue-400">Mandiri & SWebsiteejahtera</span></h1>
             <p class="text-base md:text-xl mb-8 text-gray-200 px-2">Menuju tatanan masyarakat yang guyub rukun, agamis, dan melek teknologi.</p>
             <div class="flex justify-center gap-4">
                 <a href="#data-rt" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 md:px-8 rounded-full transition shadow-lg hover:shadow-blue-500/50 text-sm md:text-base">Lihat Data Penduduk</a>
@@ -104,7 +98,7 @@
                 <h4 class="text-blue-600 font-bold uppercase tracking-wide mb-2 text-sm md:text-base">Tentang Kami</h4>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Padukuhan Bakal Pokok</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base text-justify">
-                    Bakal Pokok merupakan salah satu padukuhan di Kalurahan Argodadi, Kapanewon Sedayu, Kabupaten Bantul. Wilayah kami dikenal dengan semangat gotong royong yang tinggi serta pelestarian budaya lokal yang masih kental.
+                    Bakal Pokok merupakan salah satu padukuhan di Kalurahan Argodadi, Kapanewon Sedayu, Kabupaten Bantul. Wilayah kami terdiri dari 8 RT (RT 23 - RT 30) yang dikenal dengan semangat gotong royong yang tinggi serta pelestarian budaya lokal yang masih kental.
                 </p>
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
@@ -125,72 +119,93 @@
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-8 md:mb-12">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Data Statistik Penduduk</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Silakan pilih RT untuk melihat data detail.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Data Kependudukan RT 23 sampai RT 30.</p>
             </div>
 
             <div class="flex md:flex-wrap overflow-x-auto pb-4 md:pb-0 justify-start md:justify-center gap-2 md:gap-3 mb-8 md:mb-12 snap-x">
-                <button onclick="loadData(0)" class="rt-btn active-rt px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 01</button>
-                <button onclick="loadData(1)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 02</button>
-                <button onclick="loadData(2)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 03</button>
-                <button onclick="loadData(3)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 04</button>
-                <button onclick="loadData(4)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 05</button>
-                <button onclick="loadData(5)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 06</button>
-                <button onclick="loadData(6)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 07</button>
-                <button onclick="loadData(7)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 08</button>
+                <button onclick="loadData(0)" class="rt-btn active-rt px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 23</button>
+                <button onclick="loadData(1)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 24</button>
+                <button onclick="loadData(2)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 25</button>
+                <button onclick="loadData(3)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 26</button>
+                <button onclick="loadData(4)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 27</button>
+                <button onclick="loadData(5)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 28</button>
+                <button onclick="loadData(6)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 29</button>
+                <button onclick="loadData(7)" class="rt-btn px-5 py-2 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium text-sm whitespace-nowrap snap-center shrink-0">RT 30</button>
             </div>
 
             <div class="bg-white rounded-2xl md:rounded-3xl shadow-xl p-6 md:p-12 transition-all duration-500">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b pb-6 gap-4">
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800" id="rt-title">Data Statistik RT 01</h3>
-                        <p class="text-gray-500 mt-1 text-sm md:text-base">Ketua RT: <span id="rt-head" class="font-semibold text-blue-600">Bapak Sumardi</span></p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800" id="rt-title">Data Statistik RT 23</h3>
+                        <p class="text-gray-500 mt-1 text-sm md:text-base">Ketua RT: <span id="rt-head" class="font-semibold text-blue-600">Bapak Haryono</span></p>
                     </div>
-                    <div class="w-full md:w-auto bg-blue-50 px-6 py-3 rounded-xl md:rounded-2xl text-center md:text-left">
-                        <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Total Warga</span>
-                        <div class="text-2xl md:text-3xl font-bold text-blue-800" id="total-pop">120 Jiwa</div>
+                    <div class="flex flex-wrap gap-4 w-full md:w-auto">
+                        <div class="flex-1 bg-blue-50 px-5 py-3 rounded-xl md:rounded-2xl text-center">
+                            <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Total KK</span>
+                            <div class="text-xl md:text-2xl font-bold text-gray-800" id="total-kk">51 KK</div>
+                        </div>
+                        <div class="flex-1 bg-blue-50 px-5 py-3 rounded-xl md:rounded-2xl text-center">
+                            <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Total Warga</span>
+                            <div class="text-xl md:text-2xl font-bold text-blue-800" id="total-pop">135 Jiwa</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-3 gap-8 md:gap-12">
-                    <div class="lg:col-span-2 space-y-6 md:space-y-8">
-                        <h4 class="font-bold text-gray-700 mb-2 md:mb-4">Komposisi Gender</h4>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                            <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 relative overflow-hidden">
-                                <div class="flex justify-between items-end mb-2 relative z-10">
-                                    <div>
-                                        <p class="text-gray-500 font-medium text-sm">Laki-laki</p>
-                                        <p class="text-3xl md:text-4xl font-bold text-blue-600" id="male-pop">65</p>
-                                    </div>
-                                    <span class="text-blue-600 bg-blue-100 px-2 py-1 md:px-3 rounded-full text-xs font-bold" id="male-pct">54%</span>
+                <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <div class="space-y-8">
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 relative overflow-hidden">
+                            <h4 class="font-bold text-gray-700 mb-4 text-sm uppercase border-b pb-2">Komposisi Gender</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1 font-medium text-gray-600"><span>Laki-laki</span><span class="font-bold text-blue-600" id="male-pop">70</span></div>
+                                    <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden"><div id="male-bar" class="bg-blue-600 h-3 rounded-full transition-all duration-700" style="width: 52%"></div></div>
                                 </div>
-                                <div class="w-full bg-gray-200 h-2 md:h-3 rounded-full overflow-hidden relative z-10">
-                                    <div id="male-bar" class="bg-blue-600 h-2 md:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 54%"></div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1 font-medium text-gray-600"><span>Perempuan</span><span class="font-bold text-pink-500" id="female-pop">65</span></div>
+                                    <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden"><div id="female-bar" class="bg-pink-500 h-3 rounded-full transition-all duration-700" style="width: 48%"></div></div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 relative overflow-hidden">
-                                <div class="flex justify-between items-end mb-2 relative z-10">
-                                    <div>
-                                        <p class="text-gray-500 font-medium text-sm">Perempuan</p>
-                                        <p class="text-3xl md:text-4xl font-bold text-pink-500" id="female-pop">55</p>
-                                    </div>
-                                    <span class="text-pink-600 bg-pink-100 px-2 py-1 md:px-3 rounded-full text-xs font-bold" id="female-pct">46%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 h-2 md:h-3 rounded-full overflow-hidden relative z-10">
-                                    <div id="female-bar" class="bg-pink-500 h-2 md:h-3 rounded-full transition-all duration-1000 ease-out" style="width: 46%"></div>
-                                </div>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-gray-700 mb-4 text-sm uppercase border-b pb-2">Rentang Usia</h4>
+                            <div class="h-48 relative">
+                                <canvas id="ageChart"></canvas>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center justify-center">
-                        <h4 class="font-bold text-gray-700 mb-6 self-start w-full border-b pb-2">Sebaran Profesi</h4>
-                        <div class="w-full h-64 relative">
+                        <h4 class="font-bold text-gray-700 mb-6 self-start w-full border-b pb-2 text-sm uppercase">Sebaran Profesi</h4>
+                        <div class="w-full h-72 relative">
                             <canvas id="jobChart"></canvas>
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-8 pt-8 border-t border-gray-100">
+                    <h4 class="font-bold text-gray-800 mb-6 text-lg">Data Pendidikan</h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2 bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <h5 class="text-sm text-gray-500 font-semibold mb-4 text-center">Lulusan Pendidikan Umum</h5>
+                            <div class="h-64">
+                                <canvas id="eduGradChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <h5 class="text-sm text-blue-600 font-semibold mb-4 text-center">Sedang Menempuh Pendidikan</h5>
+                            <ul class="space-y-4 text-sm">
+                                <li class="flex justify-between border-b border-gray-200 pb-2"><span>TK/PAUD</span><span class="font-bold text-gray-800" id="edu-tk">0</span></li>
+                                <li class="flex justify-between border-b border-gray-200 pb-2"><span>SD</span><span class="font-bold text-gray-800" id="edu-sd">0</span></li>
+                                <li class="flex justify-between border-b border-gray-200 pb-2"><span>SMP</span><span class="font-bold text-gray-800" id="edu-smp">0</span></li>
+                                <li class="flex justify-between border-b border-gray-200 pb-2"><span>SMA/SMK</span><span class="font-bold text-gray-800" id="edu-sma">0</span></li>
+                                <li class="flex justify-between pt-1"><span>Perguruan Tinggi</span><span class="font-bold text-blue-600" id="edu-pt">0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -220,72 +235,114 @@
             }
         }
 
-        // --- Database & Chart Logic (Sama seperti sebelumnya) ---
+        // --- DATABASE RT (Diperbarui TOTAL sesuai Gambar) ---
+        // Data Pendidikan (Masih Menempuh) disesuaikan dengan gambar tabel terbaru:
+        // RT23: TK 4, SD 7, SMP 6, SMA 7, PT 0
+        // RT24: TK 4, SD 14, SMP 3, SMA 4, PT 0
+        // RT25: TK 3, SD 6, SMP 3, SMA 3, PT 1 (S1)
+        // RT26: TK 3, SD 5, SMP 7, SMA 4, PT 0
+        // RT27: TK 5, SD 3, SMP 5, SMA 3, PT 0
+        // RT28: TK 1, SD 8, SMP 6, SMA 3, PT 0
+        // RT29: TK 1, SD 5, SMP 4, SMA 1, PT 2 (S1)
+        // RT30: TK 1, SD 7, SMP 3, SMA 3, PT 2 (S1)
+
         const databaseRT = [
-            { rt: "01", head: "Bpk. Sumardi", male: 60, female: 55, jobs: [30, 20, 10, 15, 40] },
-            { rt: "02", head: "Bpk. Joko Susilo", male: 45, female: 50, jobs: [15, 25, 15, 20, 20] },
-            { rt: "03", head: "Bpk. Hartono", male: 72, female: 68, jobs: [40, 30, 5, 10, 55] },
-            { rt: "04", head: "Bpk. Bambang", male: 55, female: 52, jobs: [20, 20, 10, 30, 27] },
-            { rt: "05", head: "Bpk. Sutrisno", male: 42, female: 44, jobs: [10, 15, 25, 15, 21] },
-            { rt: "06", head: "Bpk. Waluyo", male: 65, female: 60, jobs: [35, 25, 5, 20, 40] },
-            { rt: "07", head: "Bpk. Gunawan", male: 50, female: 48, jobs: [15, 20, 15, 25, 23] },
-            { rt: "08", head: "Bpk. Slamet", male: 48, female: 52, jobs: [25, 30, 5, 10, 30] }
+            { 
+                rt: "23", head: "Bpk. Haryono", kk: 51,
+                male: 70, female: 65,
+                age: [27, 5, 76, 27],
+                eduGrad: [10, 23, 30, 2],
+                eduNow: {tk:4, sd:7, smp:6, sma:7, pt:0},
+                jobs: [25, 5, 1, 12, 66] 
+            },
+            { 
+                rt: "24", head: "Bpk. Haryanto", kk: 40,
+                male: 62, female: 64,
+                age: [25, 5, 64, 32],
+                eduGrad: [35, 19, 26, 2],
+                eduNow: {tk:4, sd:14, smp:3, sma:4, pt:0},
+                jobs: [22, 17, 0, 11, 77]
+            },
+            { 
+                rt: "25", head: "Bpk. Gunarto", kk: 27,
+                male: 53, female: 39,
+                age: [15, 5, 57, 15],
+                eduGrad: [13, 16, 26, 4],
+                eduNow: {tk:3, sd:6, smp:3, sma:3, pt:1},
+                jobs: [17, 10, 1, 3, 25]
+            },
+            { 
+                rt: "26", head: "Bpk. Jamusin", kk: 32,
+                male: 54, female: 49,
+                age: [16, 4, 57, 26],
+                eduGrad: [23, 14, 30, 4],
+                eduNow: {tk:3, sd:5, smp:7, sma:4, pt:0},
+                jobs: [33, 10, 1, 4, 13]
+            },
+            { 
+                rt: "27", head: "Bpk. Yuda Sutikna", kk: 28,
+                male: 40, female: 43,
+                age: [20, 3, 41, 19],
+                eduGrad: [17, 12, 28, 6],
+                eduNow: {tk:5, sd:3, smp:5, sma:3, pt:0},
+                jobs: [19, 14, 5, 3, 9]
+            },
+            { 
+                rt: "28", head: "Bpk. Eko Pramono", kk: 34,
+                male: 53, female: 52,
+                age: [19, 8, 50, 28],
+                eduGrad: [15, 23, 28, 4],
+                eduNow: {tk:1, sd:8, smp:6, sma:3, pt:0},
+                jobs: [2, 22, 3, 1, 26]
+            },
+            { 
+                rt: "29", head: "Bpk. Purnomo", kk: 29,
+                male: 39, female: 48,
+                age: [15, 3, 52, 17],
+                eduGrad: [18, 11, 26, 4],
+                eduNow: {tk:1, sd:5, smp:4, sma:1, pt:2},
+                jobs: [12, 39, 0, 7, 33]
+            },
+            { 
+                rt: "30", head: "Bpk. Hendriyanto", kk: 40,
+                male: 66, female: 58,
+                age: [20, 4, 73, 27],
+                eduGrad: [32, 25, 29, 3],
+                eduNow: {tk:1, sd:7, smp:3, sma:3, pt:2},
+                jobs: [12, 21, 1, 10, 6]
+            }
         ];
 
-        const jobLabels = ['Petani', 'Buruh', 'PNS/TNI', 'Wiraswasta', 'Pelajar/Lain'];
-        let myChart = null;
-
-        function renderChart(dataValues) {
-            const ctx = document.getElementById('jobChart').getContext('2d');
-            if(myChart) myChart.destroy();
-
-            myChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: jobLabels,
-                    datasets: [{
-                        data: dataValues,
-                        backgroundColor: ['#16a34a', '#f59e0b', '#2563eb', '#db2777', '#9ca3af'],
-                        hoverOffset: 4,
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { 
-                            position: 'bottom', 
-                            labels: { usePointStyle: true, boxWidth: 8, font: { size: 10 } } 
-                        } 
-                    },
-                    cutout: '70%',
-                }
-            });
-        }
+        // --- CHART CONFIGURATION & LOGIC ---
+        let charts = {};
 
         function loadData(index) {
             const data = databaseRT[index];
             const total = data.male + data.female;
             
+            // 1. Update Teks Info
             document.getElementById('rt-title').innerText = `Data Statistik RT ${data.rt}`;
             document.getElementById('rt-head').innerText = data.head;
             document.getElementById('total-pop').innerText = `${total} Jiwa`;
-            document.getElementById('male-pop').innerText = data.male;
-            document.getElementById('female-pop').innerText = data.female;
+            document.getElementById('total-kk').innerText = `${data.kk} KK`;
 
+            // 2. Update Gender Bar
             const malePct = Math.round((data.male / total) * 100);
             const femalePct = Math.round((data.female / total) * 100);
-
+            document.getElementById('male-pop').innerText = data.male;
+            document.getElementById('female-pop').innerText = data.female;
             document.getElementById('male-bar').style.width = `${malePct}%`;
             document.getElementById('female-bar').style.width = `${femalePct}%`;
-            document.getElementById('male-pct').innerText = `${malePct}%`;
-            document.getElementById('female-pct').innerText = `${femalePct}%`;
 
-            renderChart(data.jobs);
+            // 3. Update List Pendidikan (Sedang Menempuh)
+            document.getElementById('edu-tk').innerText = data.eduNow.tk;
+            document.getElementById('edu-sd').innerText = data.eduNow.sd;
+            document.getElementById('edu-smp').innerText = data.eduNow.smp;
+            document.getElementById('edu-sma').innerText = data.eduNow.sma;
+            document.getElementById('edu-pt').innerText = data.eduNow.pt;
 
-            const buttons = document.querySelectorAll('.rt-btn');
-            buttons.forEach((btn, idx) => {
+            // 4. Update Tab Aktif
+            document.querySelectorAll('.rt-btn').forEach((btn, idx) => {
                 if (idx === index) {
                     btn.classList.add('active-rt');
                     btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-300');
@@ -294,8 +351,95 @@
                     btn.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
                 }
             });
+
+            // 5. Render Charts
+            renderAgeChart(data.age);
+            renderJobChart(data.jobs);
+            renderEduGradChart(data.eduGrad);
         }
 
+        // --- FUNGSI RENDER CHART ---
+
+        function renderAgeChart(dataValues) {
+            const ctx = document.getElementById('ageChart').getContext('2d');
+            if(charts.age) charts.age.destroy();
+
+            charts.age = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['0-15 Th', '16-18 Th', '19-56 Th', '56+ Th'],
+                    datasets: [{
+                        label: 'Warga',
+                        data: dataValues,
+                        backgroundColor: '#6366f1',
+                        borderRadius: 5,
+                        barThickness: 20
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Horizontal Bar
+                    scales: { 
+                        x: { display: false, beginAtZero: true }, 
+                        y: { grid: { display: false }, ticks: {font: {size: 11}} } 
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function renderJobChart(dataValues) {
+            const ctx = document.getElementById('jobChart').getContext('2d');
+            if(charts.job) charts.job.destroy();
+
+            charts.job = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Petani/Tani', 'Karyawan/Tukang', 'PNS/Aparat', 'Wiraswasta', 'Lainnya/TB'],
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: ['#16a34a', '#f59e0b', '#2563eb', '#db2777', '#9ca3af'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, font: {size: 10} } } 
+                    }
+                }
+            });
+        }
+
+        function renderEduGradChart(dataValues) {
+            const ctx = document.getElementById('eduGradChart').getContext('2d');
+            if(charts.edu) charts.edu.destroy();
+
+            charts.edu = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['SD', 'SMP', 'SMA', 'Perguruan Tinggi'],
+                    datasets: [{
+                        label: 'Lulusan',
+                        data: dataValues,
+                        backgroundColor: ['#cbd5e1', '#94a3b8', '#64748b', '#475569'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // Jalankan saat pertama load
         window.addEventListener('DOMContentLoaded', () => {
             loadData(0);
         });
