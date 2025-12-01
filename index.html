@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Padukuhan Bakal Pokok - Sedayu</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">BP</div>
+                <div class="text-xl font-bold text-gray-800">Bakal Pokok<span class="text-blue-600 text-sm block font-normal">Argodadi, Sedayu</span></div>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                <a href="#home" class="hover:text-blue-600 transition">Beranda</a>
+                <a href="#profil" class="hover:text-blue-600 transition">Profil</a>
+                <a href="#data-rt" class="hover:text-blue-600 transition">Data Statistik</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center px-4">
+        <div class="max-w-3xl">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-600/30 border border-blue-400 text-sm mb-4 backdrop-blur-sm">Website Resmi</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Masyarakat Bakal Pokok<br> <span class="text-blue-400">Mandiri & Sejahtera</span></h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-200">Menuju tatanan masyarakat yang guyub rukun, agamis, dan melek teknologi.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#data-rt" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg hover:shadow-blue-500/50">Lihat Data Penduduk</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil" class="py-24 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full -z-10"></div>
+                <img src="images/bg.jpg" alt="Suasana Dusun" class="rounded-2xl shadow-2xl z-10 relative object-cover h-96 w-full">
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-dots opacity-20"></div>
+            </div>
+            <div>
+                <h4 class="text-blue-600 font-bold uppercase tracking-wide mb-2">Tentang Kami</h4>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Padukuhan Bakal Pokok</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Bakal Pokok merupakan salah satu padukuhan di Kalurahan Argodadi, Kapanewon Sedayu, Kabupaten Bantul. Wilayah kami dikenal dengan semangat gotong royong yang tinggi.
+                </p>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-lg text-blue-600 text-xl">🎯</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Visi</h4>
+                            <p class="text-sm text-gray-500">Terwujudnya masyarakat yang sejahtera, religius, dan berbudaya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data-rt" class="py-24 bg-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Data Statistik Penduduk</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Silakan pilih RT untuk melihat data detail.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="loadData(0)" class="rt-btn active-rt px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 01</button>
+                <button onclick="loadData(1)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 02</button>
+                <button onclick="loadData(2)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 03</button>
+                <button onclick="loadData(3)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 04</button>
+                <button onclick="loadData(4)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 05</button>
+                <button onclick="loadData(5)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 06</button>
+                <button onclick="loadData(6)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 07</button>
+                <button onclick="loadData(7)" class="rt-btn px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 bg-white hover:border-blue-500 font-medium">RT 08</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 transition-all duration-500">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-10 border-b pb-6">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800" id="rt-title">Data Statistik RT 01</h3>
+                        <p class="text-gray-500 mt-1">Ketua RT: <span id="rt-head" class="font-semibold text-blue-600">Bapak Sumardi</span></p>
+                    </div>
+                    <div class="mt-4 md:mt-0 bg-blue-50 px-6 py-3 rounded-2xl">
+                        <span class="text-sm text-gray-500 uppercase font-bold tracking-wider">Total Warga</span>
+                        <div class="text-3xl font-bold text-blue-800" id="total-pop">120 Jiwa</div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2 space-y-8">
+                        <h4 class="font-bold text-gray-700 mb-4">Komposisi Gender</h4>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative overflow-hidden">
+                                <div class="flex justify-between items-end mb-2 relative z-10">
+                                    <div>
+                                        <p class="text-gray-500 font-medium">Laki-laki</p>
+                                        <p class="text-4xl font-bold text-blue-600" id="male-pop">65</p>
+                                    </div>
+                                    <span class="text-blue-600 bg-blue-100 px-3 py-1 rounded-full text-xs font-bold" id="male-pct">54%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden relative z-10">
+                                    <div id="male-bar" class="bg-blue-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 54%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative overflow-hidden">
+                                <div class="flex justify-between items-end mb-2 relative z-10">
+                                    <div>
+                                        <p class="text-gray-500 font-medium">Perempuan</p>
+                                        <p class="text-4xl font-bold text-pink-500" id="female-pop">55</p>
+                                    </div>
+                                    <span class="text-pink-600 bg-pink-100 px-3 py-1 rounded-full text-xs font-bold" id="female-pct">46%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden relative z-10">
+                                    <div id="female-bar" class="bg-pink-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 46%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center justify-center">
+                        <h4 class="font-bold text-gray-700 mb-6 self-start w-full border-b pb-2">Sebaran Profesi</h4>
+                        <div class="w-full h-64 relative">
+                            <canvas id="jobChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-white text-2xl font-bold mb-4">Bakal Pokok</h3>
+            <p class="text-sm">Jl. Wates KM 12, Argodadi, Sedayu, Bantul.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-sm">
+                &copy; 2023 Pemerintah Padukuhan Bakal Pokok.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Database Simulasi
+        const databaseRT = [
+            { rt: "01", head: "Bpk. Sumardi", male: 60, female: 55, jobs: [30, 20, 10, 15, 40] },
+            { rt: "02", head: "Bpk. Joko Susilo", male: 45, female: 50, jobs: [15, 25, 15, 20, 20] },
+            { rt: "03", head: "Bpk. Hartono", male: 72, female: 68, jobs: [40, 30, 5, 10, 55] },
+            { rt: "04", head: "Bpk. Bambang", male: 55, female: 52, jobs: [20, 20, 10, 30, 27] },
+            { rt: "05", head: "Bpk. Sutrisno", male: 42, female: 44, jobs: [10, 15, 25, 15, 21] },
+            { rt: "06", head: "Bpk. Waluyo", male: 65, female: 60, jobs: [35, 25, 5, 20, 40] },
+            { rt: "07", head: "Bpk. Gunawan", male: 50, female: 48, jobs: [15, 20, 15, 25, 23] },
+            { rt: "08", head: "Bpk. Slamet", male: 48, female: 52, jobs: [25, 30, 5, 10, 30] }
+        ];
+
+        const jobLabels = ['Petani', 'Buruh', 'PNS/TNI', 'Wiraswasta', 'Pelajar/Lain'];
+        let myChart = null;
+
+        function renderChart(dataValues) {
+            const ctx = document.getElementById('jobChart').getContext('2d');
+            if(myChart) myChart.destroy();
+
+            myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: jobLabels,
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: ['#16a34a', '#f59e0b', '#2563eb', '#db2777', '#9ca3af'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, font: { size: 10 } } } },
+                    cutout: '65%',
+                }
+            });
+        }
+
+        function loadData(index) {
+            const data = databaseRT[index];
+            const total = data.male + data.female;
+            
+            document.getElementById('rt-title').innerText = `Data Statistik RT ${data.rt}`;
+            document.getElementById('rt-head').innerText = data.head;
+            document.getElementById('total-pop').innerText = `${total} Jiwa`;
+            document.getElementById('male-pop').innerText = data.male;
+            document.getElementById('female-pop').innerText = data.female;
+
+            const malePct = Math.round((data.male / total) * 100);
+            const femalePct = Math.round((data.female / total) * 100);
+
+            document.getElementById('male-bar').style.width = `${malePct}%`;
+            document.getElementById('female-bar').style.width = `${femalePct}%`;
+            document.getElementById('male-pct').innerText = `${malePct}%`;
+            document.getElementById('female-pct').innerText = `${femalePct}%`;
+
+            renderChart(data.jobs);
+
+            const buttons = document.querySelectorAll('.rt-btn');
+            buttons.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add('active-rt');
+                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-300');
+                } else {
+                    btn.classList.remove('active-rt');
+                    btn.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadData(0);
+        });
+    </script>
+</body>
+</html>
